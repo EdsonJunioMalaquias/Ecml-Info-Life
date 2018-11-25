@@ -1,0 +1,41 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Pesquisa</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <form (ngSubmit)="busca(CPF)">
+        <ion-item>
+          <ion-input type="number" [(ngModel)]="CPF" name="CPF" placeholder ="Informe O CPF" class="info"></ion-input>
+        </ion-item>
+        <button ion-button block color="login" type="submit" class="pes" >Pesquisar</button>
+    </form>
+    <ion-item-group *ngFor="let usuario of usuarios | async">
+      <ion-item-divider color="login"><b>Grupo Sanguíneo</b></ion-item-divider>
+      <ion-item class="grupo"><b>{{usuario.grupoSanguineo}}{{usuario.fatorRh}}</b></ion-item>
+      <br>
+      <ion-item-divider color="login"><b>Informações Pessoais</b></ion-item-divider>
+      <ion-item><b>Número de Registro:</b> {{usuario.numeroRegistro}}</ion-item>
+      <ion-item><b>Nome:</b> {{usuario.nome}}</ion-item>
+      <ion-item><b>CPF:</b> {{usuario.CPF}}</ion-item>
+      <br>
+      <ion-item-divider color="login"><b>Informações Sanguíneas</b></ion-item-divider>
+      <ion-item><b>Grupo Sanguíneo:</b> {{usuario.grupoSanguineo}}{{usuario.fatorRh}} </ion-item>
+      <ion-item><b>Número da Amostra:</b> {{usuario.NumeroAmostra}}</ion-item>
+      <ion-item><b>Tipo do Material:</b> {{usuario.material}}</ion-item>
+      <ion-item><b>Data da Coleta:</b> {{usuario.dataColeta}}</ion-item>
+      <ion-item><b>Sífilis:</b> {{usuario.reagenteSifilis?"Reagente":"Não reagente"}}</ion-item>
+      <ion-item><b>VR:</b> {{usuario.reagenteVR?"Reagente":"Não reagente"}}</ion-item>
+      <ion-item><b>Chagas:</b> {{usuario.reagenteChagas?"Reagente":"Não reagente"}}</ion-item> 
+      <ion-item><b>HIV:</b> {{usuario.reagenteHiv?"Reagente":"Não reagente"}}</ion-item>   
+      <ion-item><b>HTLV:</b> {{usuario.reagenteHtlv?"Reagente":"Não reagente"}}</ion-item>       
+    </ion-item-group>
+   
+
+
+</ion-content>

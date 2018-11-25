@@ -1,0 +1,142 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Cadastro
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form [formGroup]="form">
+    <ion-list>
+      <ion-item-divider color="login"><b>Informações Pessoais</b></ion-item-divider>
+      <ion-item>
+        <ion-label floating>Nome Completo</ion-label>
+        <ion-input type="text" formControlName="nome"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.nome.valid && (form.controls.nome.dirty || form.controls.nome.touched)">
+        <div [hidden]="!form.controls.nome.errors.required">O campo é obrigatório</div>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>CPF</ion-label>
+        <ion-input type="number" formControlName="CPF"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.CPF.valid && (form.controls.CPF.dirty || form.controls.CPF.touched)">
+        <div [hidden]="!form.controls.CPF.errors.required">O campo é obrigatório</div>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>E-mail</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.email.valid && (form.controls.email.dirty || form.controls.email.touched)">
+        <div [hidden]="!form.controls.email.errors.required">O campo é obrigatório</div>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Senha</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.password.valid && (form.controls.password.dirty || form.controls.password.touched)">
+        <div [hidden]="!form.controls.password.errors.required">O campo é obrigatório</div>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Número de Registro</ion-label>
+        <ion-input type="number" formControlName="numeroRegistro"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.numeroRegistro.valid && (form.controls.numeroRegistro.dirty || form.controls.numeroRegistro.touched)">
+        <div [hidden]="!form.controls.numeroRegistro.errors.required">O campo é obrigatório</div>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Nível de acesso</ion-label>
+        <ion-select formControlName="userAcess">
+          <ion-option value="admin">Administrador</ion-option>
+          <ion-option value="usuario">Usuário</ion-option>
+          <ion-option value="profSaude">Profissional da Saúde</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.userAcess.valid && (form.controls.userAcess.dirty || form.controls.userAcess.touched)">
+        <div [hidden]="!form.controls.userAcess.errors.required">O campo é obrigatório</div>
+      </ion-item>
+
+      <br>
+
+      <ion-item-divider color="login"><b>Informações Sanguíneas</b></ion-item-divider>
+
+      <ion-item>
+        <ion-label floating>Número da amostra</ion-label>
+        <ion-input type="text" formControlName="NumeroAmostra"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.NumeroAmostra.valid && (form.controls.NumeroAmostra.dirty || form.controls.NumeroAmostra.touched)">
+        <div [hidden]="!form.controls.NumeroAmostra.errors.required">O campo é obrigatório</div>
+      </ion-item>
+      <ion-item>
+        <ion-label>Grupo Sanguíneo </ion-label>
+        <ion-select formControlName="grupoSanguineo">
+          <ion-option value="A">A</ion-option>
+          <ion-option value="B">B</ion-option>
+          <ion-option value="AB">AB</ion-option>
+          <ion-option value="O">O</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item *ngIf="!form.controls.grupoSanguineo.valid && (form.controls.grupoSanguineo.dirty || form.controls.grupoSanguineo.touched)">
+        <div [hidden]="!form.controls.grupoSanguineo.errors.required">O campo é obrigatório</div>
+      </ion-item>
+      <ion-item>
+        <ion-label>Fator Rhesus</ion-label>
+        <ion-select formControlName="fatorRh">
+          <ion-option value="+">+ Positivo</ion-option>
+          <ion-option value="-">- Negativo</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.fatorRh.valid && (form.controls.fatorRh.dirty || form.controls.fatorRh.touched)">
+        <div [hidden]="!form.controls.fatorRh.errors.required">O campo é obrigatório</div>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label>Tipo do Material</ion-label>
+        <ion-select formControlName="material">
+          <ion-option value="Sangue">Sangue</ion-option>
+          <ion-option value="Plasma">Plasma</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.material.valid && (form.controls.material.dirty || form.controls.material.touched)">
+        <div [hidden]="!form.controls.material.errors.required">O campo é obrigatório</div>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Data da Coleta</ion-label>
+        <ion-input type="date" formControlName="dataColeta"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.dataColeta.valid && (form.controls.dataColeta.dirty || form.controls.dataColeta.touched)">
+        <div [hidden]="!form.controls.dataColeta.errors.required">O campo é obrigatório</div>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Reagente à Sifilis</ion-label>
+        <ion-toggle formControlName="reagenteSifilis"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Reagente à VR</ion-label>
+        <ion-toggle formControlName="reagenteVR"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Reagente à Chagas</ion-label>
+        <ion-toggle formControlName="reagenteChagas"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Reagente à HIV</ion-label>
+        <ion-toggle formControlName="reagenteHiv"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Reagente à HTLV</ion-label>
+        <ion-toggle formControlName="reagenteHtlv"></ion-toggle>
+      </ion-item>
+
+    </ion-list>
+    <div padding>
+      <button ion-button block color="login" type="submit" [disabled]="!form.valid" (click)="createAccount()" class="cadastro">Cadastrar</button>
+    </div>
+  </form>
+</ion-content>
