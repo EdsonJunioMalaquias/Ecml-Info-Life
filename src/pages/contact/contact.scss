@@ -3,11 +3,32 @@ page-contact {
     ion-content{
         background-color: #FFFFFF;
         background-size: cover;
-       color: #FFFFFF;
-        text-align: center;
+        color: #FFFFFF;
       }
-     h5{
-         text-align: right;
-     } 
 
+      ion-icon{
+          color: #c21f1f;
+          text-align: center;
+          display: block;
+          margin:auto;
+          font-size: 1.4em;
+          
+      }
+      .imgLogo{
+          
+          width: 75%;
+          display: block;
+          margin: auto;
+      }
+      .identacao{
+        text-indent:2em;
+        text-align: justify;
+      }
+      ion-title{
+            
+          text-align: center;
+      }
+      ion-footer{
+          background:#FFFFFF;
+      }
 }

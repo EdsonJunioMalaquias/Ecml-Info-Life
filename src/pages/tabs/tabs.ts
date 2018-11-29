@@ -1,18 +1,15 @@
 import { AngularFireAuth  } from 'angularfire2/auth';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController,ToastController, Tabs, Item  } from 'ionic-angular';
-import { NgForm, EmailValidator } from '@angular/forms';
 
 import { CadastroPage } from '../cadastro/cadastro';
 import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 import { LoginPage } from '../login/login';
 import { HfuncPage } from '../hfunc/hfunc';
-import { User } from '../../providers/auth/user';
 import { AuthProvider } from '../../providers/auth/auth';
 import { DatabaseProvider } from '../../providers/database/database';
 import { Observable } from 'rxjs/Observable';
-import { HtmlParser } from '@angular/compiler';
 
 
 @Component({
@@ -29,10 +26,7 @@ export class TabsPage {
   tab3Root = ContactPage;
   tab4Root = LoginPage;
   tab5Root = HfuncPage;
-  
-  
 
-  
   constructor(public navCtrl: NavController,
     private toastCtrl: ToastController,
     private authService: AuthProvider,

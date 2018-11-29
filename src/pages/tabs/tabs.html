@@ -1,7 +1,7 @@
 <ion-tabs >
   <ion-tab [show]="AdminTabs" [root]="tab2Root" tabTitle="Cadastrar" tabIcon="person-add"></ion-tab> 
   <ion-tab [show]="funcionarioTabs||AdminTabs" [root]="tab5Root" tabTitle="Pesquisar" tabIcon="search"> </ion-tab>
-  <ion-tab [root]="tab1Root" tabTitle="Inicio" tabIcon="body"></ion-tab>
+  <ion-tab [root]="tab1Root" tabTitle="Início" tabIcon="body"></ion-tab>
   <ion-tab [root]="tab3Root" tabTitle="Fale Conosco" tabIcon="contacts"></ion-tab>
   <ion-tab (ionSelect)="signOut()" tabTitle="Sair" tabIcon="log-out"></ion-tab>
 </ion-tabs>
